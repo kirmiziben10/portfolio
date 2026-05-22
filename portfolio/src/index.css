@@ -1,3 +1,6 @@
+@import './harmonized-palette.css';
+@import './mono-palette.css';
+/* "A Modern CSS Reset" from https://www.joshwcomeau.com/ */
 /* 1. Use a more-intuitive box-sizing model */
 *, *::before, *::after {
   box-sizing: border-box;
