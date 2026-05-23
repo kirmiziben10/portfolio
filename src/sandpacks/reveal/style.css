@@ -1,0 +1,53 @@
+html {
+  background: #23272f;
+  color: #000;
+  font:
+    500 150%/1.4 system-ui,
+    sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100dvh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.icon {
+  font-size: 10dvw;
+}
+
+body{
+  background-color: #f8f3e8;
+}
+
+.animate{
+  padding: 0.5em;
+  line-height: 1;
+}
+
+@keyframes blur-in {
+  0%{
+    opacity: 0;
+    filter: blur(1em);
+  }
+  20%{
+    opacity: 1;
+    filter: blur(0);
+  }
+  100%{
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+.animate span{
+  display: inline;
+  will-change: opacity, filter;
+  opacity: 0;
+  filter: blur(1em);
+  font-family: 'Courier New', Courier, monospace;
+  animation: blur-in 2s alternate infinite ;
+  animation-delay: calc((var(--i) * 20ms) + 100ms);
+}
