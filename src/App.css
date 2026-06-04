@@ -1,5 +1,5 @@
 body{
-  background-color: var(--mustard-100);
+  background-color: var(--mustard-200);
 }
 
 .animate{
@@ -26,4 +26,10 @@ body{
   font-family: 'Courier New', Courier, monospace;
   animation: blur-in 0.5s forwards;
   animation-delay: calc((var(--i) * 10ms) + 300ms);
+}
+
+.glyph-bg-wrapper{
+  position:absolute;
+  width: 100vw;
+  height: 100vh;
 }
