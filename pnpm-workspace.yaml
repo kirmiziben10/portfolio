@@ -1,2 +1,4 @@
+allowBuilds:
+  es5-ext: false
 ignoredBuiltDependencies:
   - es5-ext

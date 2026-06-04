@@ -1,0 +1,29 @@
+.sp-overlay.sp-loading {
+  background: var(--mustard-200) !important;
+}
+
+.sp-cube-wrapper {
+  display: none;
+}
+
+.sp-overlay.sp-loading::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(0deg, 
+      hsla(210, 17%, 98%, 0) 0%,
+      hsla(210, 17%, 98%, 0.08) 20%,
+      hsla(210, 17%, 98%, 0.08) 30%,
+      hsla(210, 17%, 98%, 0) 50%,
+      hsla(210, 17%, 98%, 0) 100%
+    );
+  animation: shimmer 1.8s ease-out infinite;
+}
+
+@keyframes shimmer {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%);  }
+}

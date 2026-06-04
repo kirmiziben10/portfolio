@@ -1,4 +1,5 @@
 import React from "react";
+import "./Sandpack.css";
 import {
   SandpackProvider,
   SandpackLayout,
@@ -13,6 +14,7 @@ function SandpackWindow() {
     // add theme="auto" later if you implement themes.
     <SandpackProvider
       template="react"
+      options={{ bundlerURL: "https://sandpack-bundler.codesandbox.io" }}
       files={{
         '/App.js': jsContent,
         '/styles.css': cssContent
