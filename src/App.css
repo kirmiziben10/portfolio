@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 body{
   background-color: var(--mustard-200);
 }
@@ -29,7 +31,222 @@ body{
 }
 
 .glyph-bg-wrapper{
-  position:absolute;
-  width: 100vw;
-  height: 100vh;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/*Page Card layout*/
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1440px;
+  min-height: 100vh;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 32px;
+  width: 100%;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 8px 8px 0;
+  width: 100%;
+  flex: 1;
+  align-self: stretch;
+}
+
+/*Content Card*/
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex: 1;
+  background: var(--mustard-100);
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
+    inset 0px 4px 4px rgba(255, 255, 255, 0.25),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.50);
+  border-radius: 8px 8px 0 0;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 32px;
+  gap: 10px;
+  width: 100%;
+}
+
+.about .photo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.about .photo {
+  width: 297px;
+  height: 297px;
+  flex-shrink: 0;
+  background: #fff;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.about .text {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: center;
+  color: #000;
+}
+
+.pens {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.pens-header {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+  opacity: 0.6;
+  padding: 16px 16px 0;
+}
+
+.pens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  width: 100%;
+}
+
+.pen-card {
+  position: relative;
+  width: 100%;
+  max-width: 453px;
+  min-height: 300px;
+  background: #fff;
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #999;
+  overflow: hidden;
+}
+
+/*Added because inset shadows render below child elements. Kinda weird i think. It should render above. Maybe there is a good reason?*/ 
+.pen-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: 8px;
+  box-shadow:
+    inset 0px 4px 4px rgba(255, 255, 255, 0.25),
+    inset 0px 0px 8px rgba(255, 255, 255, 0.5);
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+  .navbar {
+    padding: 20px 24px;
+  }
+
+  .content-wrapper {
+    padding: 4px 4px 0;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about .photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about .text {
+    font-size: 16px;
+    line-height: 18px;
+  }
+
+  .pens-header {
+    padding: 12px 12px 0;
+  }
+
+  .pens-grid {
+    padding: 12px;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 16px;
+  }
+
+  .about {
+    padding: 16px;
+  }
+
+  .about .photo {
+    width: 140px;
+    height: 140px;
+  }
+
+  .about .text {
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .pens-header {
+    padding: 10px 10px 0;
+  }
+
+  .pens-grid {
+    padding: 10px;
+  }
 }
