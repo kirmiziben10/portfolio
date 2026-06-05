@@ -1,4 +1,3 @@
-import React from "react";
 import "./Sandpack.css";
 import {
   SandpackProvider,
