@@ -1,23 +1,11 @@
-import React from "react";
-import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router";
+import Home from "./Pages/Home";
 import GlyphDither from "./components/GlyphDither";
-
-import SandpackWindow from "./components/Sandpack";
+import Layout from "./Layout";
+import "./App.css";
+import SnippetDetails from "./Pages/SnippetDetails";
 
 function App() {
-  const animateWord = (text: string) => {
-    return text.split("").map((char, i) => {
-      return (
-        <span
-          className="animate-letters"
-          key={i}
-          style={{ "--i": i } as React.CSSProperties}
-        >
-          {char}
-        </span>
-      );
-    });
-  };
 
   return (
     <>
@@ -34,37 +22,14 @@ function App() {
           drift={42}
         />
       </div>
-      <div className="page">
-        <nav className="navbar">
-          <h1 className="animate" aria-label="Yiğit Ziştoylu">
-            {animateWord("Yiğit Ziştoylu")}
-          </h1>
-        </nav>
-        <div className="content-wrapper">
-          <main className="content">
-            <section className="about">
-              <div className="photo-container">
-                <div className="photo">Photo</div>
-              </div>
-              <p className="text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-            </section>
-            <div className="pens">
-              <h2 className="pens-header">Pens</h2>
-              <div className="pens-grid">
-                <div className="pen-card">
-                  <SandpackWindow />
-                </div>
-                <div className="pen-card">Pen 2</div>
-                <div className="pen-card">Pen 3</div>
-                <div className="pen-card">Pen 4</div>
-              </div>
-            </div>
-          </main>
-        </div>
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="snippet/:id" element={<SnippetDetails />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }

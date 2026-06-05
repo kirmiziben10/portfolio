@@ -221,6 +221,8 @@ export default function GlyphDither(props: GlyphDitherProps) {
 
         const atlas = createAtlas(gl);
 
+        gl.clearColor(0, 0, 0, 0);
+
         gl.useProgram(program);
 
         gl.uniform1f(uniforms.gridCols, gridCols);
@@ -262,6 +264,7 @@ export default function GlyphDither(props: GlyphDitherProps) {
             animationId = requestAnimationFrame(render);
             if (canvas.width === 0 || canvas.height === 0) return;
             gl.uniform1f(uniforms.time, (performance.now() - startTime) / 1000);
+            gl.clear(gl.COLOR_BUFFER_BIT);
             gl.drawArrays(gl.TRIANGLES, 0, 6);
         }
         render();
@@ -293,5 +296,5 @@ export default function GlyphDither(props: GlyphDitherProps) {
         gl.uniform1f(uniforms.drift, drift);
     }, [gridCols, voronoiScale, skew, angle, threshold, gamma, mix, speed, drift]);
 
-    return <canvas ref={canvasRef} style={{ width: '100%', height: '100%', minHeight: '500px', display: 'block' }} />;
+    return <canvas ref={canvasRef} style={{ width: '100%', height: '100%', minHeight: '500px', display: 'block', background: 'transparent' }} />;
 }
