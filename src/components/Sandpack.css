@@ -5,6 +5,7 @@
 
 .sp-layout{
   border: 0 !important;
+  pointer-events: none;
 }
 
 .sp-cube-wrapper {

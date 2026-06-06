@@ -73,7 +73,6 @@ body {
   align-self: stretch;
 }
 
-/*Content Card*/
 .content {
   display: flex;
   flex-direction: column;
