@@ -10,7 +10,7 @@ import jsContent from "../sandpacks/reveal/script.js?raw";
 
 function SandpackWindow() {
   return (
-    // add theme="auto" later if you implement themes.
+    //add theme="auto" later if you implement themes.
     <SandpackProvider
       template="react"
       options={{ bundlerURL: "https://sandpack-bundler.codesandbox.io" }}

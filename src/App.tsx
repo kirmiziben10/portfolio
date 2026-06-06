@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router";
-import Home from "./Pages/Home";
 import GlyphDither from "./components/GlyphDither";
-import Layout from "./Layout";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import SnippetDetails from "./pages/SnippetDetails";
 import "./App.css";
-import SnippetDetails from "./Pages/SnippetDetails";
 
 function App() {
 
