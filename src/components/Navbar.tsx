@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const animateWord = (text: string) => {
     return text.split("").map((char, i) => {
@@ -19,7 +20,9 @@ function Navbar() {
     return (
         <nav className="navbar">
             <h1 className="animate" aria-label="Yiğit Ziştoylu">
-                {animateWord("Yiğit Ziştoylu")}
+                <Link to="/" className="logo-anchor">
+                    {animateWord("Yiğit Ziştoylu")}
+                </Link>
             </h1>
         </nav>
     )

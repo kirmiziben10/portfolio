@@ -20,6 +20,11 @@ body{
   }
 }
 
+.logo-anchor{
+  text-decoration: none;
+  color: #000;
+}
+
 .animate span{
   display: inline;
   will-change: opacity, filter;
