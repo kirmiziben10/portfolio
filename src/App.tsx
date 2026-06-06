@@ -26,7 +26,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="snippet/:id" element={<SnippetDetails />} />
+            <Route path="snippet" element={<SnippetDetails />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -142,6 +142,7 @@ body {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 18px;
+  margin: auto;
   color: #555;
   text-transform: uppercase;
   letter-spacing: 0.08em;
