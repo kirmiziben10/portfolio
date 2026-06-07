@@ -1,14 +1,16 @@
-import { Link, Outlet } from "react-router-dom"
+import { Link, Outlet, useLocation } from "react-router-dom"
 import SandpackWindow from "../components/Sandpack"
 import Navbar from "../components/Navbar"
 
 function Home() {
+  const location = useLocation()
+  const isHome = location.pathname ==="/"
   return (
     <>
       <div className="page">
         <Navbar />
         <div className="content-wrapper">
-          <main className="content">
+          <main className={`content ${!isHome ? "content-inset" : ""}`}>
             <section className="about">
               <div className="photo-container">
                 <div className="photo">Photo</div>
@@ -32,9 +34,9 @@ function Home() {
               </div>
             </div>
           </main>
+          <Outlet />
         </div>
       </div>
-      <Outlet />
     </>
   )
 }

@@ -69,7 +69,28 @@ body {
   width: 100%;
 }
 
+.snippet-details{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: .5em;
+  margin-inline: 0.25em;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  background: var(--mustard-100);
+  box-shadow:
+    0px 4px 4px rgba(0, 0, 0, 0.25),
+    0px 0px 4px rgba(0, 0, 0, 0.25),
+    inset 0px 4px 4px rgba(255, 255, 255, 0.25),
+    inset 0px 0px 4px rgba(255, 255, 255, 0.50);
+  border-radius: 8px 8px 0 0;
+}
+
 .content-wrapper {
+  position:relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -91,6 +112,12 @@ body {
     inset 0px 4px 4px rgba(255, 255, 255, 0.25),
     inset 0px 0px 4px rgba(255, 255, 255, 0.50);
   border-radius: 8px 8px 0 0;
+}
+
+.content-inset{
+  inset: 10px;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
 .about {
