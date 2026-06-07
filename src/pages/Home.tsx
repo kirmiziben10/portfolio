@@ -1,8 +1,12 @@
-import { Link } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
 import SandpackWindow from "../components/Sandpack"
+import Navbar from "../components/Navbar"
 
 function Home() {
-    return (
+  return (
+    <>
+      <div className="page">
+        <Navbar />
         <div className="content-wrapper">
           <main className="content">
             <section className="about">
@@ -29,7 +33,10 @@ function Home() {
             </div>
           </main>
         </div>
-    )
+      </div>
+      <Outlet />
+    </>
+  )
 }
 
 export default Home

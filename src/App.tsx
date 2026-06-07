@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import GlyphDither from "./components/GlyphDither";
-import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import SnippetDetails from "./pages/SnippetDetails";
 import "./App.css";
@@ -24,8 +23,7 @@ function App() {
       </div>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
+          <Route path="/" element={<Home />}>
             <Route path="snippet" element={<SnippetDetails />} />
           </Route>
         </Routes>
