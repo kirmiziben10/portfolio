@@ -1,10 +1,12 @@
-import { Link, Outlet, useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import SandpackWindow from "../components/Sandpack"
 import Navbar from "../components/Navbar"
+import SnippetDetails from "./SnippetDetails"
 
 function Home() {
   const location = useLocation()
   const isHome = location.pathname ==="/"
+  const isSnippet = location.pathname === "/snippet"
   return (
     <>
       <div className="page">
@@ -34,7 +36,7 @@ function Home() {
               </div>
             </div>
           </main>
-          <Outlet />
+          <SnippetDetails isOpen={isSnippet}/>
         </div>
       </div>
     </>
