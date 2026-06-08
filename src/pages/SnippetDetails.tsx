@@ -22,6 +22,10 @@ function SnippetDetails({ isOpen }: SnippetDetailsProps) {
                 gsap.set(containerRef.current, { y: 0, display: "flex" });
             }
             else { gsap.set(containerRef.current, { y: startY, display: "none" }) };
+
+            return() => {
+            isFirstRender.current = true;
+          };
         }
 
         if (isOpen) {
